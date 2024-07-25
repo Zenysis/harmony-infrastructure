@@ -40,9 +40,9 @@ data "aws_ami" "ubuntu22" {
 data "template_file" "template" {
   template    = file("${path.module}/template.tpl")
   vars        = {
-      SERVER_NAME               = "${var.DEPLOYMENT}-web.${var.ENV_CODE}.${var.BASE_DOMAIN}"
-      VAULT_HOST                = "${var.DEPLOYMENT}-vault.${var.ENV_CODE}.${var.BASE_DOMAIN}"
-      DB_HOST                   = "${var.DEPLOYMENT}-db.${var.ENV_CODE}.${var.BASE_DOMAIN}"
+      SERVER_NAME               = "${var.DEPLOYMENT}-web.${var.ENV_CODE}"
+      VAULT_HOST                = "${var.DEPLOYMENT}-vault.${var.ENV_CODE}"
+      DB_HOST                   = "${var.DEPLOYMENT}-db.${var.ENV_CODE}"
       DEPLOYMENT                = var.DEPLOYMENT
       REGION_NAME               = var.REGION_NAME
       ENV_CODE                  = var.ENV_CODE
